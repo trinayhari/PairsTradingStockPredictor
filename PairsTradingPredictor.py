@@ -23,7 +23,10 @@ finally:
     if sqliteConnection:
         sqliteConnection.close()
         print("The SQLite connection is closed")
+
         
+        
+      
 '''
 server = 'tcp:mysqlserver42069.database.windows.net' 
 database = 'myStockPredictorDatabase'
