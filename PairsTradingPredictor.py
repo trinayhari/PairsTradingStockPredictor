@@ -61,6 +61,27 @@ try:
     print("Tickers in small_market_cap_tickers table:")
     for row in curs.fetchall():
         print(row[0])
+
+        # def loop(list):
+  
+#   max = 0
+#   z = 0
+#   stock1 = "" 
+#   stock2 = ""
+#   for x in list:
+#     for y in list:
+#       z = stocks(x,y)
+#       if z>max and x!=y:
+#         max = z
+#         stock1 = x
+#         stock2 = y
+#   print(max)
+#   print(stock1 + ","+ stock2)
+
+
+# loop(large_market_cap)
+# loop(medium_market_cap)
+# loop(small_market_cap)
       
 
 
@@ -120,26 +141,7 @@ except:
 # medium_market_cap = ["AMD", "CMCSA", "TMUS", "TXN", "HON", "INTC", "QCOM", "SNY", "INTU", "AMAT", "AMGN", "ISRG", "SBUX", "MDLZ", "BKNG", "PDD", "ADI", "GILD", "ADP", "VRTX", "LRCX"]
 # small_market_cap = ["ABNB", "PANW", "REGN", "PYPL", "EQIX", "CSX", "MU", "SNPS", "CME", "ATVI", "KLAC", "NTES", "CDNS", "FTNT", "MNST", "MELI", "WDAY", "ORLY", "MAR", "JD", "CHTR", "NXPI", "MRVL", "ROP", "BIDU", "DXCM", "CTAS", "MCHP", "LULU", "MRNA", "KDP", "TEAM", "KHC", "AEP", "ADSK", "PCAR", "IDXX", "PAYX", "EXC", "ODFL", "ON", "BIIB", "TTD", "ROST", "GEHC", "SGEN", "IBKR", "CSGP", "EA", "LI", "XEL", "GFS", "CRWD", "BKR", "CTSH", "FAST", "MBLY", "VRSK", "DLTR", "DDOG", "WBD", "CEG", "CCEP"]
 
-# def loop(list):
-  
-#   max = 0
-#   z = 0
-#   stock1 = "" 
-#   stock2 = ""
-#   for x in list:
-#     for y in list:
-#       z = stocks(x,y)
-#       if z>max and x!=y:
-#         max = z
-#         stock1 = x
-#         stock2 = y
-#   print(max)
-#   print(stock1 + ","+ stock2)
 
-
-# loop(large_market_cap)
-# loop(medium_market_cap)
-# loop(small_market_cap)
 
 
 
