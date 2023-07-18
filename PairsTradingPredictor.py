@@ -7,21 +7,38 @@ import yfinance as yf
 import sqlite3
 
 try:
-    sqliteConnection = sqlite3.connect('SQLite_Python.db')
-    cursor = sqliteConnection.cursor()
+    con = sqlite3.connect('SQLite_Python.db')
+    curs = con.cursor()
     print("Database created and Successfully Connected to SQLite")
 
+    curs.execute('''CREATE TABLE large_market_cap_tickers (
+        id INTEGER, ticker TEXT )''')
+
+    tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'TSLA', 'META', 'AVGO', 'PEP', 'COST', 'ADBE', 'CSCO', 'AZN', 'NFLX']
+
+    for ticker in tickers:
+      curs.execute('INSERT INTO large_market_cap_tickers (ticker) VALUES (?)', (ticker,))
+
+    con.commit()
+
+    curs.execute('SELECT ticker FROM large_market_cap_tickers')
+    print("Tickers in large_market_cap_tickers table:")
+    for row in curs.fetchall():
+        print(row[0])
+      
+
+
     sqlite_select_Query = "select sqlite_version();"
-    cursor.execute(sqlite_select_Query)
-    record = cursor.fetchall()
+    curs.execute(sqlite_select_Query)
+    record = curs.fetchall()
     print("SQLite Database Version is: ", record)
-    cursor.close()
+    curs.close()
 
 except sqlite3.Error as error:
     print("Error while connecting to sqlite", error)
 finally:
-    if sqliteConnection:
-        sqliteConnection.close()
+    if con:
+        con.close()
         print("The SQLite connection is closed")
 
         
