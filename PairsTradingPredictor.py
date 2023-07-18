@@ -11,6 +11,7 @@ try:
     curs = con.cursor()
     print("Database created and Successfully Connected to SQLite")
 
+    # Large Market Cap Tickers
     curs.execute('''CREATE TABLE IF NOT EXISTS large_market_cap_tickers (
         id INTEGER, ticker TEXT )''')
 
@@ -26,10 +27,12 @@ try:
     for row in curs.fetchall():
         print(row[0])
 
+    # Medium Market Cap Tickers
+
     curs.execute('''CREATE TABLE IF NOT EXISTS medium_market_cap_tickers (
       id INTEGER, ticker TEXT )''')
 
-    medium_tickers = medium_market_cap = ['AMD', 'CMCSA', 'TMUS', 'TXN', 'HON', 'INTC', 'QCOM', 'SNY', 'INTU', 'AMAT', 'AMGN', 'ISRG', 'SBUX', 'MDLZ', 'BKNG', 'PDD', 'ADI', 'GILD', 'ADP', 'VRTX', 'LRCX']
+    medium_tickers = ['AMD', 'CMCSA', 'TMUS', 'TXN', 'HON', 'INTC', 'QCOM', 'SNY', 'INTU', 'AMAT', 'AMGN', 'ISRG', 'SBUX', 'MDLZ', 'BKNG', 'PDD', 'ADI', 'GILD', 'ADP', 'VRTX', 'LRCX']
 
     for ticker in medium_tickers:
       curs.execute('INSERT INTO medium_market_cap_tickers (ticker) VALUES (?)', (ticker,))
@@ -40,7 +43,24 @@ try:
     print("Tickers in medium_market_cap_tickers table:")
     for row in curs.fetchall():
         print(row[0])
-      
+    
+
+    # Small Market Cap Tickers
+
+    curs.execute('''CREATE TABLE IF NOT EXISTS small_market_cap_tickers (
+      id INTEGER, ticker TEXT )''')
+
+    small_tickers = ['ABNB', 'PANW', 'REGN', 'PYPL', 'EQIX', 'CSX', 'MU', 'SNPS', 'CME', 'ATVI', 'KLAC', 'NTES', 'CDNS', 'FTNT', 'MNST', 'MELI', 'WDAY', 'ORLY', 'MAR', 'JD', 'CHTR', 'NXPI', 'MRVL', 'ROP', 'BIDU', 'DXCM', 'CTAS', 'MCHP', 'LULU', 'MRNA', 'KDP', 'TEAM', 'KHC', 'AEP', 'ADSK', 'PCAR', 'IDXX', 'PAYX', 'EXC', 'ODFL', 'ON', 'BIIB', 'TTD', 'ROST', 'GEHC', 'SGEN', 'IBKR', 'CSGP', 'EA', 'LI', 'XEL', 'GFS', 'CRWD', 'BKR', 'CTSH', 'FAST', 'MBLY', 'VRSK', 'DLTR', 'DDOG', 'WBD', 'CEG', 'CCEP']
+
+    for ticker in small_tickers:
+      curs.execute('INSERT INTO small_market_cap_tickers (ticker) VALUES (?)', (ticker,))
+
+    con.commit()
+
+    curs.execute('SELECT ticker FROM small_market_cap_tickers')
+    print("Tickers in small_market_cap_tickers table:")
+    for row in curs.fetchall():
+        print(row[0])
       
 
 
