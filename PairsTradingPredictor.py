@@ -11,7 +11,7 @@ try:
     curs = con.cursor()
     print("Database created and Successfully Connected to SQLite")
 
-    curs.execute('''CREATE TABLE large_market_cap_tickers (
+    curs.execute('''CREATE TABLE IF NOT EXISTS large_market_cap_tickers (
         id INTEGER, ticker TEXT )''')
 
     tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'TSLA', 'META', 'AVGO', 'PEP', 'COST', 'ADBE', 'CSCO', 'AZN', 'NFLX']
