@@ -14,9 +14,9 @@ try:
     curs.execute('''CREATE TABLE IF NOT EXISTS large_market_cap_tickers (
         id INTEGER, ticker TEXT )''')
 
-    tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'TSLA', 'META', 'AVGO', 'PEP', 'COST', 'ADBE', 'CSCO', 'AZN', 'NFLX']
+    large_tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'TSLA', 'META', 'AVGO', 'PEP', 'COST', 'ADBE', 'CSCO', 'AZN', 'NFLX']
 
-    for ticker in tickers:
+    for ticker in large_tickers:
       curs.execute('INSERT INTO large_market_cap_tickers (ticker) VALUES (?)', (ticker,))
 
     con.commit()
@@ -25,6 +25,22 @@ try:
     print("Tickers in large_market_cap_tickers table:")
     for row in curs.fetchall():
         print(row[0])
+
+    curs.execute('''CREATE TABLE IF NOT EXISTS medium_market_cap_tickers (
+      id INTEGER, ticker TEXT )''')
+
+    medium_tickers = medium_market_cap = ['AMD', 'CMCSA', 'TMUS', 'TXN', 'HON', 'INTC', 'QCOM', 'SNY', 'INTU', 'AMAT', 'AMGN', 'ISRG', 'SBUX', 'MDLZ', 'BKNG', 'PDD', 'ADI', 'GILD', 'ADP', 'VRTX', 'LRCX']
+
+    for ticker in medium_tickers:
+      curs.execute('INSERT INTO medium_market_cap_tickers (ticker) VALUES (?)', (ticker,))
+
+    con.commit()
+
+    curs.execute('SELECT ticker FROM medium_market_cap_tickers')
+    print("Tickers in medium_market_cap_tickers table:")
+    for row in curs.fetchall():
+        print(row[0])
+      
       
 
 
