@@ -1,50 +1,31 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Dropdown Menu with Input</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
-        <div class="dropdown-content" id="dropdownContent">
-            <span onclick="selectOption('Tech')">Tech</span>
-            <span onclick="selectOption('Healthcare')">Healthcare</span>
-            <span onclick="selectOption('Financials')">Financials</span>
-            <span onclick="selectOption('Materials')">Materials</span>
-            <span onclick="selectOption('Energy')">Energy</span>
-        </div>
-    </div>
-</body>
-<script src="script.js"></script>
-</html>
-
-
- -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Stock Analyzer</title>
 </head>
 <body>
-    <header>
-        <h1>Stock Analyzer</h1>
-    </header>
-    <div class="container">
-        <!-- Add a form with a button -->
-        <form action="/button_clicked" method="post">
-            <!-- Add a name attribute to the button so it can be accessed in Flask -->
-            <button type="submit" name="Tech" value="Tech">Tech</button>
-            <button type="submit" name="Healthcare" value="Healthcare">Healthcare</button>
-            <button type="submit" name="Financials" value="Financials">Financials</button>
-            <button type="submit" name="Materials" value="Materials">Materials</button>
-            <button type="submit" name="Energy" value="Energy">Energy</button>
-            <!-- Add more buttons as needed -->
-        </form>
+    <form id="myForm" method="POST" action="/result">
+        <button type="button" onclick="submitForm('Tech')">Tech</button>
+        <button type="button" onclick="submitForm('Healthcare')">Healthcare</button>
+        <button type="button" onclick="submitForm('Financials')">Financials</button>
+        <button type="button" onclick="submitForm('Materials')">Materials</button>
+        <button type="button" onclick="submitForm('Energy')">Energy</button>
 
-        <!-- Your other content goes here -->
-    </div>
+        <h1>Result of the Python Function:</h1>
+        <p>{{ button_value }}</p>
+    </form>
+
+    <script>
+        function submitForm(buttonValue) {
+            var form = document.getElementById('myForm');
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'button_value';
+            input.value = buttonValue;
+            form.appendChild(input);
+            form.submit();
+        }
+    </script>
 </body>
 </html>
+
