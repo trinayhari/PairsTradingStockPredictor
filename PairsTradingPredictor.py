@@ -9,14 +9,13 @@ Materials = ['LIN', 'BHP', 'BHPLF', 'RTNTF', 'RTPPF', 'RIO', 'AIQUY', 'AIQUF', '
 Financials = ['BRK-A', 'BRK-B', 'JPM', 'V', 'MA', 'JPM-PC', 'JPM-PD', 'BAC', 'BAC-PK', 'BAC-PL', 'BML-PG', 'BML-PH', 'BML-PL', 'BAC-PE', 'BML-PJ', 'BAC-PB', 'IDCBY', 'WFC-PQ', 'WFC-PY', 'WFC-PR', 'WFC-PL', 'HDB', 'WFC', 'MS', 'ACGBY', 'HSBC', 'C-PJ', 'HBCYF', 'CICHY', 'CICHF', 'RY', 'SPGI', 'GS', 'BACHY', 'BACHF', 'CMWAY', 'BX', 'WFC-PC', 'PNGAY', 'AXP', 'PIAIF', 'TD', 'SCHW', 'C', 'CIHKY', 'BLK', 'AAIGF', 'AAGIY', 'CILJF', 'ALIZY', 'ALIZF', 'MMC', 'RY-PT', 'MBFJF', 'MUFG', 'GS-PJ', 'IBN', 'GS-PK', 'MS-PF', 'MS-PI', 'BNPQY', 'PYPL', 'BNPQF', 'CB', 'MS-PK', 'MS-PE', 'PBCRF', 'USB-PH', 'PBCRY', 'GS-PA', 'MS-PA', 'GS-PD', 'ZFSVF', 'ZURVY', 'PGR', 'SBKFF', 'UBS', 'AON', 'USB-PP', 'AXAHY', 'CME', 'AXAHF', 'KKR', 'MCO', 'ICE', 'PSTVY', 'DBSDY', 'DBSDF', 'SAN', 'BCDRF', 'IVSBF', 'BNS', 'LNSTY', 'BMO', 'SMFNF', 'LDNXF', 'SMFG', 'ITUB', 'USB', 'UNCFF']
 Energy = ['XOM', 'CVX', 'SHEL', 'RYDAF', 'PCCYF', 'PBMRF', 'TTE', 'TTFNF', 'COP', 'BP', 'BPAQF', 'SNPMF', 'STOHF', 'EQNR', 'PBR', 'PBR-A', 'SLB', 'ENB', 'EOG', 'EBBNF', 'CSUAY', 'CUAEF', 'CNQ', 'EPD', 'PEXNY', 'OXY', 'MPC', 'PXD', 'E', 'PSX', 'WOPEF', 'EIPAF', 'WDS', 'HES', 'VLO', 'ET', 'WMB', 'KMI', 'SU', 'LNG', 'TRP', 'BKR', 'MPLX', 'HAL', 'CVE', 'DVN', 'NTOIY', 'NTOIF', 'IMO', 'OKE', 'FANG', 'CQP', 'EC', 'CTRA', 'REPYY', 'TS', 'TRGP', 'IPXHY', 'SSLZY', 'AKRBF', 'TRMLF', 'PBA', 'STOSF', 'YZCAY', 'IPXHF', 'MRO', 'OMVKY', 'OMVJF', 'CCJ', 'EQT', 'MMP', 'CCOZF', 'YPF', 'APA', 'IEP', 'OVV', 'TPL', 'CHK', 'WES', 'OGFGY', 'PAA', 'GLPEY', 'GLPEF', 'DINO', 'MGYOY', 'AETUF', 'FTI', 'CSAN', 'HESM', 'PTRRY', 'NOV', 'AR', 'RRC', 'VARRY', 'NE', 'CHX', 'SWN', 'KLYCY', 'MTDR', 'MUR']
 Healthcare = ['UNH', 'JNJ', 'LLY', 'NVO', 'NONOF', 'MRK', 'RHHBF', 'RHHBY', 'RHHVF', 'ABBV', 'NVS', 'NVSEF', 'TMO', 'AZNCF', 'AZN', 'PFE', 'ABT', 'DHR', 'SNY', 'BMY', 'SNYNF', 'AMGN', 'MDT', 'ISRG', 'ELV', 'SYK', 'CVS', 'GILD', 'VRTX', 'CSLLY', 'ESLOY', 'ZTS', 'CI', 'ESLOF', 'CMXHF', 'BDX', 'REGN', 'HCA', 'MKGAF', 'MKKGY', 'GLAXF', 'BSX', 'GSK', 'SMMNY', 'SEMHF', 'HUM', 'BAYRY', 'EW', 'BAYZF', 'DSNKY', 'MCK', 'DSKYF', 'DXCM', 'TKPHF', 'TAK', 'CHGCY', 'MRNA', 'IDXX', 'IQV', 'LZAGY', 'LZAGF', 'ALC', 'HLN', 'HOCPY', 'HLNCF', 'BIIB', 'ABC', 'CNC', 'A', 'GEHC', 'SGEN', 'VEEV', 'RMD', 'ILMN', 'SRTOY', 'ARGX', 'ZBH', 'WUXAY', 'MTD', 'WST', 'SOAGY', 'ALPMF', 'SDMHF', 'ALPMY', 'WBA', 'SAUHY', 'CLPBF', 'CLPBY', 'GMAB', 'SUVPF', 'BNTX', 'SAUHF', 'GNMSF', 'ALGN', 'BAX', 'SARTF', 'TRUMY', 'TRUMF', 'ALNY', 'CAH']
-
 def stocksCorrelations(stock1, stock2):
     df = pd.DataFrame()
-    df = yf.download(stock1, start="2023-6-19", end="2023-7-19", interval='15m', progress=False)
+    df = yf.download(stock1, start="2023-6-28", end="2023-7-28", interval='15m', progress=False)
     df.iloc[:, :]
 
     df1 = pd.DataFrame()
-    df1 = yf.download(stock2, start="2023-6-19", end="2023-7-19", interval='15m', progress=False)
+    df1 = yf.download(stock2, start="2023-6-28", end="2023-7-28", interval='15m', progress=False)
     df1.iloc[:, :]
 
     r = df['Close'].corr(df1['Close'])
@@ -50,6 +49,7 @@ def loops(sector):
     return stock_pairs
 
 
+
 def stocksCorrelation(stock1,stock2):
 
   df = pd.DataFrame()
@@ -66,24 +66,41 @@ def stocksCorrelation(stock1,stock2):
   return r
 
 def loop(sector):
-  max = 0
-  stock1 = "" 
-  stock2 = ""
-  for x in sector:
-      for y in sector:
-        z = stocksCorrelation(x,y)
-        if z>max and x!=y:
-            max = z
-            stock1 = x
-            stock2 = y
-        
-        return stock1 + ","+ stock2
+    max_corr = 0
+    stock1 = ""
+    stock2 = ""
+    for x in sector:
+        for y in sector:
+            correlation = stocksCorrelation(x,y)
+            if correlation > max_corr and x != y:
+                max_corr = correlation
+                stock1 = x
+                stock2 = y
 
+    return stock1, stock2
+loop(Tech)
 PairsTradingPredictor = Flask(__name__)
 
+@PairsTradingPredictor.route('/result', methods=['POST'])
+def result():
+    if request.method == 'POST':
+        selected_option = request.form['menu_options']
+        return f"You selected: {loops(selected_option)}"
+
+def tech_process_button_click():
+    # Your Python code here
+    # This function will be executed when the button is pressed
+    print("Button clicked")
+
 @PairsTradingPredictor.route('/')
-def home():
+def index():
     return render_template('index.html')
+
+@PairsTradingPredictor.route('/button_click', methods=['POST'])
+def tech_button_click():
+    tech_process_button_click()
+    return "Button Clicked!"
+
 if __name__ == '__main__':
     PairsTradingPredictor.run(debug=True)
 
@@ -94,7 +111,7 @@ if __name__ == '__main__':
 #         result_texts = loops(eval(button_value))
 #         return render_template('result.html', result_text=result_texts)
 
-@PairsTradingPredictor.route('/result', methods=['GET'])
+@PairsTradingPredictor.route('/result', methods=['GET,POST'])
 def result():
     if request.method == 'GET':
         # Process the form data here (if needed)

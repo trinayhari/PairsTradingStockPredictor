@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Dropdown Menu</title>
+</head>
+<body>
+    <h1>Select a sector:</h1>
+    <form action="/result" method="post">
+        <select name="menu_options">
+            <option value="Tech">Tech</option>
+            <option value="Materials">Materials</option>
+            <option value="Financials">Financials</option>
+            <option value="Energy">Energy</option>
+            <option value="Healthcare">Healthcare</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
     <title>Stock Analyzer</title>
 </head>
 <body>
-    <form id="myForm" method="POST" action="/result">
-        <button type="button" onclick="submitForm('Tech')">Tech</button>
-        <button type="button" onclick="submitForm('Healthcare')">Healthcare</button>
-        <button type="button" onclick="submitForm('Financials')">Financials</button>
-        <button type="button" onclick="submitForm('Materials')">Materials</button>
-        <button type="button" onclick="submitForm('Energy')">Energy</button>
-
-        <h1>Result of the Python Function:</h1>
-        <p>{{ button_value }}</p>
-    </form>
+    <h1>Press the Button</h1>
+    <button id="techButton">Tech Pairs!</button>
 
     <script>
-        function submitForm(buttonValue) {
-            var form = document.getElementById('myForm');
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'button_value';
-            input.value = buttonValue;
-            form.appendChild(input);
-            form.submit();
-        }
+       document.getElementById('techButton').addEventListener('click', function() {
+            // Send a POST request to the server when the button is clicked
+            fetch('/button_click', {method: 'POST'})
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Button clicked successfully!');
+                    } else {
+                        console.error('Failed to click the button.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error occurred:', error);
+                });
+        });
     </script>
 </body>
 </html>
