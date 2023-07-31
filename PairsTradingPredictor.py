@@ -84,6 +84,8 @@ def result():
        stock1, stock2 = loop(selected_option)
        return render_template('result.html', stock1=stock1, stock2=stock2)
 
+       #Use compare function and print result
+
 @PairsTradingPredictor.route('/')
 def index():
     return render_template('index.html')

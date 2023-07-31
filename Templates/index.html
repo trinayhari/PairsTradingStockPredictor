@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Dropdown Menu</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Select a sector:</h1>
@@ -18,31 +19,5 @@
 </body>
 </html>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Stock Analyzer</title>
-</head>
-<body>
-    <h1>Press the Button</h1>
-    <button id="techButton">Tech Pairs!</button>
 
-    <script>
-       document.getElementById('techButton').addEventListener('click', function() {
-            // Send a POST request to the server when the button is clicked
-            fetch('/button_click', {method: 'POST'})
-                .then(response => {
-                    if (response.ok) {
-                        console.log('Button clicked successfully!');
-                    } else {
-                        console.error('Failed to click the button.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error occurred:', error);
-                });
-        });
-    </script>
-</body>
-</html>
 
